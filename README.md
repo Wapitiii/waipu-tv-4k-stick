@@ -57,3 +57,5 @@ v11.7.6958 [Download (Google OTA)](https://android.googleapis.com/packages/ota-a
 ## Misc
 
 This device contains a UART port, one is able to connect to it but not able to properly interact with it (probably locked down)
+
+There are tools for a development board that uses the same processor, might be useful: https://dl.khadas.com/products/vim1s/
