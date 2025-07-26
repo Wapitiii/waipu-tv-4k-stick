@@ -52,7 +52,7 @@ After extracting it, you will get:
 * vendor.img
 * vendor_boot.img
 
-v11.7.6958 [Download](https://android.googleapis.com/packages/ota-api/package/7c929e57d44207cd4065a12f26aa6fb301cc1e30.zip)
+v11.7.6958 [Download (Google OTA)](https://android.googleapis.com/packages/ota-api/package/7c929e57d44207cd4065a12f26aa6fb301cc1e30.zip) or [Download (Github)](https://github.com/Wapitiii/waipu-tv-4k-stick/releases/tag/v11.7.6958)
 
 ## Misc
 
