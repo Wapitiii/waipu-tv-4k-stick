@@ -28,10 +28,12 @@ A repo for the popular waipu tv 4k stick
 
 ---
 
-### Power 🔌
+### Power
 * **Stick Input**: 5V / 1A
 * **Power Consumption**: < 2.5W (in operation) | < 0.5W (standby)
 * **Power Adapter**: Input: 220V | Output: 5V
+
+---
 
 ## Firmware (OTA)
 
@@ -54,8 +56,53 @@ After extracting it, you will get:
 
 v11.7.6958 [Download (Google OTA)](https://android.googleapis.com/packages/ota-api/package/7c929e57d44207cd4065a12f26aa6fb301cc1e30.zip) or [Download (Github)](https://github.com/Wapitiii/waipu-tv-4k-stick/releases/tag/v11.7.6958)
 
+---
+
+## PCB Photos
+
+Click on a title to expand, then click the image to see the full-resolution version.
+
+<details>
+  <summary>pcb_back_1.jpg</summary>
+  <a href="/pcb-photos/pcb_back_1.jpg"><img src="/pcb-photos/pcb_back_1.jpg" alt="PCB Back 1" width="400"></a>
+</details>
+<details>
+  <summary>pcb_back_2.JPG</summary>
+  <a href="/pcb-photos/pcb_back_2.JPG"><img src="/pcb-photos/pcb_back_2.JPG" alt="PCB Back 2" width="400"></a>
+</details>
+<details>
+  <summary>pcb_back_emmc_closeup.jpg</summary>
+  <a href="/pcb-photos/pcb_back_emmc_closeup.jpg"><img src="/pcb-photos/pcb_back_emmc_closeup.jpg" alt="PCB eMMC Closeup" width="400"></a>
+</details>
+<details>
+  <summary>pcb_front_1.jpg</summary>
+  <a href="/pcb-photos/pcb_front_1.jpg"><img src="/pcb-photos/pcb_front_1.jpg" alt="PCB Front 1" width="400"></a>
+</details>
+<details>
+  <summary>pcb_front_2.jpg</summary>
+  <a href="/pcb-photos/pcb_front_2.jpg"><img src="/pcb-photos/pcb_front_2.jpg" alt="PCB Front 2" width="400"></a>
+</details>
+<details>
+  <summary>pcb_front_3.JPG</summary>
+  <a href="/pcb-photos/pcb_front_3.JPG"><img src="/pcb-photos/pcb_front_3.JPG" alt="PCB Front 3" width="400"></a>
+</details>
+<details>
+  <summary>pcb_front_cpu_pinout_closeup_1.jpg</summary>
+  <a href="/pcb-photos/pcb_front_cpu_pinout_closeup_1.jpg"><img src="/pcb-photos/pcb_front_cpu_pinout_closeup_1.jpg" alt="CPU Pinout Closeup 1" width="400"></a>
+</details>
+<details>
+  <summary>pcb_front_cpu_pinout_closeup_2.jpg</summary>
+  <a href="/pcb-photos/pcb_front_cpu_pinout_closeup_2.jpg"><img src="/pcb-photos/pcb_front_cpu_pinout_closeup_2.jpg" alt="CPU Pinout Closeup 2" width="400"></a>
+</details>
+
+---
+
 ## Misc
 
-This device contains a UART port, one is able to connect to it but not able to properly interact with it (probably locked down)
+This device contains a UART port, one is able to connect to it but not able to properly interact with it (autoboot timer is not enabled)
+
+The baud rate for the UART port is 921600, anything else will output garbled mess
+
+The UART output (u-boot log) can be found here: [uart_output.txt](/uart/uart_output.txt)
 
 There are tools for a development board that uses the same processor, might be useful: https://dl.khadas.com/products/vim1s/
