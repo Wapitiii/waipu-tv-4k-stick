@@ -114,3 +114,13 @@ The baud rate for the UART port is 921600, anything else will output garbled mes
 The UART output (u-boot log) can be found here: [uart_output.txt](/uart/uart_output.txt)
 
 There are tools for a development board that uses the same processor, might be useful: https://dl.khadas.com/products/vim1s/
+
+## U-Boot
+
+u-boot's CONFIG_AUTOBOOT_DELAY is probably set to -2, so that means we can't just interrupt the boot sequence and enter the u-boot shell, for that we would require to do fault-injection to the eMMC DAT0 point to bring us to the u-boot shell.
+
+The eMMC's DAT0 point can be found in the Datasheet provided in Specifications, one might be able to make a flexible pcb like the one thats used for the nintendo switch oled's eMMC for modding it. With that it should be able to short it successfully and bring us to u-boot shell.
+
+That still doesn't mean we would have access, SEI Robotics could've added a password to the u-boot shell.
+
+More information about AML secure boot and dumping of u-boot and such can be found in this blog post about another amlogic based device: https://oddsolutions.github.io/Pixel-Tablet-Dock-Secure-Boot-Bypass/
