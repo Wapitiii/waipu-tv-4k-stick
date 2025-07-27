@@ -119,8 +119,6 @@ There are tools for a development board that uses the same processor, might be u
 
 u-boot's CONFIG_AUTOBOOT_DELAY is probably set to -2, so that means we can't just interrupt the boot sequence and enter the u-boot shell, for that we would require to do fault-injection to the eMMC DAT0 point to bring us to the u-boot shell.
 
-The eMMC's DAT0 point can be found in the Datasheet provided in Specifications, one might be able to make a flexible pcb like the one thats used for the nintendo switch oled's eMMC for modding it or just hold a thin needle at the point which should also work. With that it should be able to short it successfully and bring us to u-boot shell.
-
-That still doesn't mean we would have access, SEI Robotics could've added a password to the u-boot shell.
+The eMMC's DAT0 point can be found in the Datasheet provided in Specifications. The DAT0 point is near the CPU which one can see in the image provided, its labled as D0, shorting at the right time we can gain u-boot shell.
 
 More information about AML secure boot and dumping of u-boot and such can be found in this blog post about another amlogic based device: https://oddsolutions.github.io/Pixel-Tablet-Dock-Secure-Boot-Bypass/
