@@ -5,8 +5,8 @@ A repo for the popular waipu tv 4k stick
 ### Core Hardware
 * **Model**: waipu.tv 4K Stick
 * **Processor (CPU)**: Amlogic S905Y4 (Quad-Core Cortex-A35)
-* **RAM**: 2 GB DDR
-* **Internal Storage**: 8 GB eMMC
+* **RAM**: 2 GB CXMT LPDDR4X SDRAM [Datasheet](https://lcsc.com/datasheet/lcsc_datasheet_2410121605_CXMT-CXDB4CBAM-MK-A_C20598565.pdf)
+* **Internal Storage**: 8 GB eMMC FORSEE FEMDNN008G-08A39 [Datasheet](https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588886680569065472)
 
 ---
 
@@ -23,7 +23,7 @@ A repo for the popular waipu tv 4k stick
 ---
 
 ### Connectivity
-* **Wi-Fi**: IEEE 802.11 b/g/n/ac (2.4 GHz & 5.0 GHz)
+* **Wi-Fi**: IEEE 802.11 b/g/n/ac (2.4 GHz & 5.0 GHz) MEDIATEK MT7663BSN [Datasheet](https://mediatek-marketing.files.svdcdn.com/production/documents/MT7663BSN-Datasheet-Brief_v1.3.pdf?dm=1714749331)
 * **HDMI**: HDMI 2.1 with HDCP 2.2 support
 
 ---
