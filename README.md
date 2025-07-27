@@ -94,6 +94,14 @@ Click on a title to expand, then click the image to see the full-resolution vers
   <summary>pcb_front_cpu_pinout_closeup_2.jpg</summary>
   <a href="/pcb-photos/pcb_front_cpu_pinout_closeup_2.jpg"><img src="/pcb-photos/pcb_front_cpu_pinout_closeup_2.jpg" alt="CPU Pinout Closeup 2" width="400"></a>
 </details>
+<details>
+  <summary>pcb_front_wifi_closeup.JPG</summary>
+  <a href="/pcb-photos/pcb_front_wifi_closeup.JPG"><img src="/pcb-photos/pcb_front_wifi_closeup.JPG" alt="WIFI Closeup" width="400"></a>
+</details>
+<details>
+  <summary>pcb_front_wifi_pinout_maybe_closeup.jpg</summary>
+  <a href="/pcb-photos/pcb_front_wifi_pinout_maybe_closeup.jpg"><img src="/pcb-photos/pcb_front_wifi_pinout_maybe_closeup.jpg" alt="WIFI Pinout Maybe Closeup" width="400"></a>
+</details>
 
 ---
 
