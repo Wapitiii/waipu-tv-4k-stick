@@ -1,0 +1,435 @@
+printenv
+1080p_h=1080
+1080p_w=1920
+1080p_x=0
+1080p_y=0
+EnableSelinux=enforcing
+Irq_check_en=0
+active_slot=_a
+arch=arm
+avb2=1
+baudrate=115200
+bcb_cmd=get_avb_mode;get_valid_slot;if test ${vendor_boot_mode} = true; then setenv loadaddr_kernel 0x3080000;setenv dtb_mem_addr 0x1000000;fi;if test ${active_slot} != normal; then echo ab mode, read dtb from kernel;setenv common_dtb_load imgread dtb ${boot_part} ${dtb_mem_addr};fi;
+board=oppen
+board_logo_part=odm_ext
+board_name=s4_ap222_wudang
+bootLogoPart=odm_ext_a
+boot_ddr_type=LPDDR4
+boot_flag=0
+boot_part=boot_a
+bootargs=init=/init console=ttyS0,921600 no_console_suspend earlycon=aml-uart,0xfe07a000 ramoops.pstore_en=1 ramoops.record_size=0x8000 ramoops.console_size=0x4000 loop.max_part=4 loglevel=1 rootfstype=ramfs otg_device=1 hw_id=1 rgb_color=0x1f4c0000 logo=osd0,loaded,0x00300000 vout=2160p60hz,enable panel_type=lcd_1
+ hdmitx=,420,8bit hdmimode=2160p60hz hdmichecksum=0x54720000 dolby_vision_on=0 hdr_policy=0 hdr_priority= frac_rate_policy=1 hdmi_read_edid= cvbsmode=480cvbs osd_reverse=0 video_reverse=0 irq_check_en=0 androidboot.selinux=enforcing androidboot.firstboot=1 jtag=disable androidboot.sei_kernelLog=0 sei_super_opt_nolo
+ck_enable=1 androidboot.bootloader=01.01.240422.151641 androidboot.hardware=amlogic androidboot.serialno=GZ00000000000000 androidboot.oem=ATV00000000000000000000000000000 androidboot.rpmb_state=0x1 meson-gx-mmc.caps2_quirks=mmc-hs400 androidboot.force_normal_boot=1 androidboot.slot_suffix=_a rootfstype=ramfs aml_dt
+= recovery_part=boot_a recovery_offset=0 androidboot.slot_suffix=_a
+bootcmd=run storeboot
+bootdelay=0
+bootloader_version=01.01.240422.151641
+bootm_low=0
+bootm_size=80000000
+bootup_offset=0x3884dd0
+bootup_size=0x3f4848
+buildtype=user
+burn_offset=0x3c79620
+burn_size=0x1d508
+check_result=succ
+cmdline_keys=setenv region_code US;if keyman init 0x1234; then if keyman read usid ${loadaddr} str; then setenv bootargs ${bootargs} androidboot.serialno=${usid};setenv serial ${usid}; setenv serial# ${usid};else setenv bootargs ${bootargs} androidboot.serialno=ap222${cpu_id};setenv serial ap222${cpu_id}; setenv se
+rial# ap222${cpu_id};fi;if keyman read region_code ${loadaddr} str; then fi;if keyman read mac ${loadaddr} str; then setenv bootargs ${bootargs} mac=${mac} androidboot.mac=${mac};fi;if keyman read deviceid ${loadaddr} str; then setenv bootargs ${bootargs} androidboot.deviceid=${deviceid};fi;fi;if keyman read oem ${
+loadaddr} str; then setenv bootargs ${bootargs} androidboot.oem=${oem};fi;if keyman read modelgroup ${modelgroup} str; then setenv bootargs ${bootargs} androidboot.modelgroup=${modelgroup};fi;factory_provision init;
+colorattribute=420,8bit
+common_dtb_load=imgread dtb boot_a 0x1000000
+cpu=armv8
+cpu_id=00000000000000
+cvbs_drv=0
+cvbsmode=480cvbs
+disableunlock=1
+display_bpp=16
+display_color_bg=0
+display_color_fg=0xffff
+display_color_index=16
+display_height=2160
+display_layer=osd0
+display_width=3840
+dolby_status=1
+dolby_vision_on=0
+dtb_mem_addr=0x1000000
+dv_fw_addr=0xa00000
+dv_fw_dir=/reserved/firmware/dovi_fw.bin
+dv_fw_dir_odm_ext=/odm_ext/firmware/dovi_fw.bin
+dv_fw_dir_vendor=/vendor/firmware/dovi_fw.bin
+emmc_buswidth=8-bit
+emmc_capacity=0x1d2000000
+emmc_manufacturer_id=d6
+emmc_mode=HS200 (200MHz)
+emmc_quirks=meson-gx-mmc.caps2_quirks="mmc-hs400"
+emmc_speed=200000000
+emmc_version=MMC version 1.0
+erase_cache=0
+ethaddr=00:00:00:00:00:00
+ext4LogoPath=/logo_files/bootup.bmp
+ext4LogoSz=3f4848
+ext4logoLoadCmd=ext4load mmc 1:${logoPart} ${logoLoadAddr} ${ext4LogoPath}
+fastboot_offset=0x3769780
+fastboot_size=0x6b708
+fatload_dev=usb
+fb_addr=0x00300000
+fb_height=1080
+fb_width=1920
+fdt_high=0x20000000
+fdtaddr=1000000
+fileaddr=20000
+filesize=3f4848
+firstboot=1
+forUpgrade_1stBootIndex=0
+forUpgrade_bootloaderCopies=3
+forUpgrade_bootloaderIndex=0
+forUpgrade_flashType=BOOT_EMMC
+forUpgrade_robustOta=true
+forUpgrade_secureBoot=false
+forUpgrade_socType=37
+frac_rate_policy=1
+fs_type=rootfstype=ramfs
+gatewayip=10.18.9.1
+get_os_type=if store read ${os_ident_addr} ${boot_part} 0 0x1000; then os_ident ${os_ident_addr}; fi
+gpt_mode=false
+hdmichecksum=0x54720000
+hdmimode=2160p60hz
+hdr_policy=0
+hostname=arm_gxbb
+hw_id=1
+init_display=get_rebootmode;echo reboot_mode:::: ${reboot_mode};if test ${reboot_mode} = quiescent; then setenv reboot_mode_android quiescent;setenv dolby_status 0;setenv dolby_vision_on 0;setenv outputmode dummy_1;run storeargs;setenv bootargs ${bootargs} androidboot.quiescent=1;osd open;osd clear;else if test ${r
+eboot_mode} = recovery_quiescent; then setenv reboot_mode_android quiescent;setenv dolby_status 0;setenv dolby_vision_on 0;setenv outputmode dummy_1;run storeargs;setenv bootargs ${bootargs} androidboot.quiescent=1;osd open;osd clear;else setenv reboot_mode_android normal;run storeargs;hdmitx hpd;hdmitx get_preferr
+ed_mode;hdmitx get_parse_edid;dovi process;watermark_init;osd open;osd clear;run load_bmp_logo;bmp scale;vout output ${outputmode};dovi set;dovi pkg;vpp hdrpkt;fi;fi;
+initargs=init=/init console=ttyS0,921600 no_console_suspend earlycon=aml-uart,0xfe07a000 ramoops.pstore_en=1 ramoops.record_size=0x8000 ramoops.console_size=0x4000 loop.max_part=4
+initrd_high=7f800000
+ipaddr=10.18.9.97
+jtag=disable
+load_bmp_logo=if rdext4pic ${board_logo_part} $loadaddr; then bmp display $logoLoadAddr; else if imgread pic logo bootup $loadaddr; then bmp display $bootup_offset; fi; fi;
+loadaddr=0x3080000
+loadaddr_kernel=0x3080000
+loadaddr_rtos=0x00001000
+lock=10101000
+loglevel=1
+logoLoadAddr=20000
+logoPart=f
+netmask=255.255.255.0
+oem=ATV00000000000000000000000000000
+oemlock=lock
+os_ident_addr=0x00500000
+os_type=kernel
+osd_reverse=0
+otg_device=1
+outputmode=2160p60hz
+panel_type=lcd_1
+partition_mode=dynamic
+preboot=run bcb_cmd; run upgrade_check;run init_display;run storeargs;run upgrade_key;bcb uboot-command;run switch_bootmode;
+reboot_mode=normal
+reboot_mode_android=normal
+reboot_status=reboot_init
+recovery_boot_offset=0x374c270
+recovery_boot_size=0x1d508
+recovery_from_fat_dev=setenv loadaddr ${loadaddr_kernel};if fatload ${fatload_dev} 0 ${loadaddr} aml_autoscript; then autoscr ${loadaddr}; fi;if fatload ${fatload_dev} 0 ${loadaddr} recovery.img; then if fatload ${fatload_dev} 0 ${dtb_mem_addr} dtb.img; then echo ${fatload_dev} dtb.img loaded; fi;setenv bootargs ${
+bootargs} ${fs_type};bootm ${loadaddr};fi;
+recovery_from_flash=echo active_slot: ${active_slot};setenv loadaddr ${loadaddr_kernel};if test ${active_slot} = normal; then setenv bootargs ${bootargs} ${fs_type} aml_dt=${aml_dt} recovery_part=${recovery_part} recovery_offset=${recovery_offset};if test ${upgrade_step} == 3; then if ext4load mmc 1:2 ${dtb_mem_add
+r} /recovery/dtb.img; then echo cache dtb.img loaded; fi;if test ${vendor_boot_mode} = true; then if imgread kernel ${recovery_part} ${loadaddr} ${recovery_offset}; then bootm ${loadaddr}; fi;else if ext4load mmc 1:2 ${loadaddr} /recovery/recovery.img; then echo cache recovery.img loaded; wipeisb; bootm ${loadaddr}
+; fi;fi;else if imgread dtb recovery ${dtb_mem_addr}; then else echo restore dtb; run common_dtb_load;fi;fi;if imgread kernel ${recovery_part} ${loadaddr} ${recovery_offset}; then bootm ${loadaddr}; fi;else if fdt addr ${dtb_mem_addr}; then else echo retry common dtb; run common_dtb_load; fi;if test ${partition_mod
+e} = normal; then setenv bootargs ${bootargs} ${fs_type} aml_dt=${aml_dt} recovery_part=${boot_part} recovery_offset=${recovery_offset};if imgread kernel ${boot_part} ${loadaddr}; then bootm ${loadaddr}; fi;else if test ${vendor_boot_mode} = true; then setenv bootargs ${bootargs} ${fs_type} aml_dt=${aml_dt} recover
+y_part=${boot_part} recovery_offset=${recovery_offset} androidboot.slot_suffix=${active_slot};if imgread kernel ${boot_part} ${loadaddr}; then bootm ${loadaddr}; fi;else setenv bootargs ${bootargs} ${fs_type} aml_dt=${aml_dt} recovery_part=${recovery_part} recovery_offset=${recovery_offset} androidboot.slot_suffix=
+${active_slot};if imgread kernel ${recovery_part} ${loadaddr} ${recovery_offset}; then wipeisb; bootm ${loadaddr}; fi;fi;fi;fi;
+recovery_from_sdcard=setenv fatload_dev mmc;if mmcinfo; then run recovery_from_fat_dev; fi;
+recovery_from_udisk=setenv fatload_dev usb;if usb start 0; then run recovery_from_fat_dev; fi;
+recovery_offset=0
+recovery_part=recovery_a
+region_code=US
+rgb_color=0x1f4c0000
+rpmb_state=1
+sdc_burning=sdc_burn ${sdcburncfg}
+sdcburncfg=aml_sdc_burn.ini
+sei_kernelLog=0
+sei_super_opt_nolock_enable=1
+serial=GZ00000000000000
+serial#=GZ00000000000000
+serverip=10.18.9.113
+silent=0
+slot-suffixes=0
+soc=s4
+standby_reboot_quiescent=0
+storage_param=setenv bootargs ${bootargs} ${emmc_quirks}; store param;setenv bootargs ${bootargs} ${mtdbootparts};
+storeargs=get_bootloaderversion;setenv bootargs ${initargs} loglevel=${loglevel} ${fs_type} otg_device=${usb_is_slave} hw_id=${hw_id} rgb_color=${rgb_color} logo=${display_layer},loaded,${fb_addr} vout=${outputmode},enable panel_type=${panel_type} hdmitx=${cecconfig},${colorattribute} hdmimode=${hdmimode} hdmicheck
+sum=${hdmichecksum} dolby_vision_on=${dolby_vision_on} hdr_policy=${hdr_policy} hdr_priority=${hdr_priority} frac_rate_policy=${frac_rate_policy} hdmi_read_edid=${hdmi_read_edid} cvbsmode=${cvbsmode} osd_reverse=${osd_reverse} video_reverse=${video_reverse} irq_check_en=${Irq_check_en}  androidboot.selinux=${Enable
+Selinux} androidboot.firstboot=${firstboot} jtag=${jtag} androidboot.sei_kernelLog=${sei_kernelLog};setenv bootargs ${bootargs} sei_super_opt_nolock_enable=${sei_super_opt_nolock_enable} androidboot.bootloader=${bootloader_version} androidboot.hardware=amlogic;run cmdline_keys;
+storeboot=run get_os_type;run storage_param;if test ${os_type} = rtos; then setenv loadaddr ${loadaddr_rtos};store read ${loadaddr} ${boot_part} 0 0x400000;bootm ${loadaddr};else if test ${os_type} = kernel; then get_system_as_root_mode;echo system_mode in storeboot: ${system_mode};get_avb_mode;echo active_slot in
+storeboot: ${active_slot};if test ${system_mode} = 1; then setenv bootargs ${bootargs} ro rootwait skip_initramfs;else setenv bootargs ${bootargs} androidboot.force_normal_boot=1;fi;if test ${active_slot} != normal; then setenv bootargs ${bootargs} androidboot.slot_suffix=${active_slot};fi;if fdt addr ${dtb_mem_add
+r}; then else echo retry common dtb; run common_dtb_load; fi;setenv loadaddr ${loadaddr_kernel};if imgread kernel ${boot_part} ${loadaddr}; then bootm ${loadaddr}; fi;else echo wrong OS format ${os_type}; fi;fi;echo try upgrade as booting failure; run update;
+switch_bootmode=get_rebootmode;if test ${reboot_mode} = factory_reset; then run recovery_from_flash;else if test ${reboot_mode} = update; then run update;else if test ${reboot_mode} = quiescent; then setenv bootargs ${bootargs} androidboot.quiescent=1;run try_auto_burn;else if test ${reboot_mode} = recovery_quiesce
+nt; then setenv bootargs ${bootargs} androidboot.quiescent=1;run recovery_from_flash;else if test ${reboot_mode} = cold_boot; then run try_auto_burn;else if test ${reboot_mode} = fastboot; then fastboot 0;fi;fi;fi;fi;fi;fi;
+system_mode=0
+try_auto_burn=adnl 2000 3000;
+update=run usb_burning; run usb_burningCfg; run sdc_burning; if mmcinfo; then run recovery_from_sdcard;fi;if usb start 0; then run recovery_from_udisk;fi;run recovery_from_flash;
+upgrade_bar_offset=0x382ce30
+upgrade_bar_size=0xb8
+upgrade_check=echo recovery_status=${recovery_status};if itest.s "${recovery_status}" == "in_progress"; then run storeargs; run recovery_from_flash;else fi;echo upgrade_step=${upgrade_step}; if itest ${upgrade_step} == 3; then run storeargs; run update; fi;
+upgrade_error_offset=0x37d4e90
+upgrade_error_size=0x2bf68
+upgrade_fail_offset=0x3800ec0
+upgrade_fail_size=0x2bf68
+upgrade_key=if detect_upgradekey; then echo upgradekey_val:::: ${upgradekey_val};if test ${upgradekey_val} = fastboot; then osd clear;imgread pic logo fastboot $loadaddr;bmp display $fastboot_offset;bmp scale; echo detect fastboot key; fastboot 0;else if test ${upgradekey_val} = upgrade; then run update;fi;fi;fi;
+upgrade_logo_offset=0x3858e60
+upgrade_logo_size=0x2bf68
+upgrade_step=2
+upgrade_success_offset=0x3720300
+upgrade_success_size=0x2bf68
+upgrade_unfocus_offset=0x3800e00
+upgrade_unfocus_size=0xb8
+upgrade_upgrading_offset=0x382cef0
+upgrade_upgrading_size=0x2bf68
+upgradekey_val=p�vy
+usb_burning=adnl 1200
+usb_burningCfg=usb_burn aml_sdc_burn.ini
+usb_is_slave=1
+usb_update=1
+usid=GZ00000000000000
+vendor=amlogic
+vendor_boot_mode=true
+vendor_boot_part=vendor_boot
+video_reverse=0
+vout_init=enable
+
+Environment size: 12424/65532 bytes
+s4_ap222_wudang# help
+?       - alias for 'help'
+adnl    - use Amlogic DNL protocol
+aml_key_burn- Burning keys from external device(sdmmc/udisk/memory) other than usb device
+aml_sysrecovery- Burning with amlogic format package from partition sysrecovery
+amlbootsta- get bootloader status in env
+amlmmc  - AMLMMC sub system
+amlnf   - aml mtd nand sub-system
+amlsecurecheck- try bootloader/dtb/recovery secure check
+autoscr - DEPRECATED - use "source" command instead
+avb     - avb
+base    - print or set address offset
+bcb     - bcb
+bd2657_i2c_read- test i2c
+bd2657_i2c_write- test i2c
+bd71888_i2c_read- test i2c
+bd71888_i2c_write- test i2c
+blkcache- block cache diagnostics and control
+bmp     - manipulate BMP image data
+boot    - boot default, i.e., run 'bootcmd'
+boot_cooling- cpu temp-system
+bootd   - boot default, i.e., run 'bootcmd'
+bootefi - Boots an EFI payload from memory
+bootelf - Boot from an ELF image in memory
+booti   - boot arm64 Linux Image image from memory
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+bootvx  - Boot vxWorks from an ELF image
+chpart  - change active partition
+clkmsr  - Amlogic measure clock
+cmp     - memory compare
+coninfo - print console devices and information
+copy_slot_bootable- copy_slot_bootable
+cp      - memory copy
+crc32   - checksum calculation
+cvbs    - CVBS sub-system
+dcache  - enable or disable data cache
+ddr_auto_fast_boot_check- ddr_fastboot_config cmd arg1 arg2 arg3...
+ddr_auto_scan_drv- ddr_test_cmd cmd arg1 arg2 arg3...
+ddr_auto_test_window- ddr_test_cmd cmd arg1 arg2 arg3...
+ddr_cpu_test- ddr_test_cmd cmd arg1 arg2 arg3...
+ddr_fast_boot- ddr_fastboot_config cmd arg1 arg2 arg3...
+ddr_g12_offset_data- ddr_g12_offset_data  1 0  0 0  1 3
+ddr_g12_override_data- ddr_g12_override_data  1 0  0 0  1 3
+ddr_spec_test- DDR test function
+ddr_test_cmd- ddr_test_cmd cmd arg1 arg2 arg3...
+ddr_test_copy- ddr_test_copy function
+ddrtest - DDR test function
+defenv_reserv- reserve some specified envs after defaulting env
+detect_upgradekey- Detect recovery key press
+dhcp    - boot image via network using DHCP/TFTP protocol
+dovi    - Dolby_vision sub-system
+dsprun  - load dspboot.bin from ddr address
+dtimg   - manipulate dtb/dtbo Android image
+echo    - echo args to console
+editenv - edit environment variable
+efuse   - efuse commands
+efuse_obj- eFUSE object program commands
+efuse_user- efuse user space read write ops
+emmc    - EMMC sub system
+env     - environment handling commands
+erase   - erase FLASH memory
+exit    - exit script
+ext2load- load binary file from a Ext2 filesystem
+ext2ls  - list files in a directory (default /)
+ext4load- load binary file from a Ext4 filesystem
+ext4ls  - list files in a directory (default /)
+ext4size- determine a file's size
+factory_provision- provision keybox
+
+false   - do nothing, unsuccessfully
+fastboot- run as a fastboot usb or udp device
+fatinfo - print information about filesystem
+fatload - load binary file from a dos filesystem
+fatls   - list files in a directory (default /)
+fatmkdir- create a directory
+fatrm   - delete a file
+fatsize - determine a file's size
+fatwrite- write file into a dos filesystem
+fdt     - flattened device tree utility commands
+flinfo  - print FLASH memory information
+fstype  - Look up a filesystem type
+g12_d2pll- g12_d2pll 1300  1 0x10 0
+get_avb_mode- get_avb_mode
+get_boot_part- get part name to load the bootable part
+get_bootloaderversion- print bootloader version
+get_rebootmode- get reboot mode
+get_system_as_root_mode- get_system_as_root_mode
+get_valid_slot- get_valid_slot
+gpio    - query and control gpio pins
+gzwrite - unzip and write memory to block device
+hdmitx  - HDMITX sub-system
+help    - print command description/usage
+i2c     - I2C sub-system
+icache  - enable or disable instruction cache
+imgread - Read the image from internal flash with actual size
+imxtract- extract a part of a multi-image
+ini     - parse an ini file in memory and merge the specified section into the env
+ini_model- parse ini file by env model_name
+itest   - return true/false on integer compare
+jtagoff - disable jtag
+jtagon  - enable jtag
+keyman  - Unify key ops interfaces based dts cfg
+keyunify- key unify sub-system
+leds_state- manage amlogic LEDs
+load    - load binary file from a filesystem
+loop    - infinite loop on address range
+ls      - list files in a directory (default /)
+lzmadec - lzma uncompress a memory region
+md      - memory display
+mdio    - MDIO utility commands
+mii     - MII utility commands
+mm      - memory modify (auto-incrementing address)
+mmc     - MMC sub system
+mmcinfo - display MMC info
+model_list- list ini model name
+mtd     - MTD utils
+mtdparts- define flash/nand partitions
+musb    - using for get USB information
+mw      - memory write (fill)
+nand    - NAND sub-system
+nboot   - boot from NAND device
+nfs     - boot image via network using NFS protocol
+nm      - memory modify (constant address)
+os_ident- identify OS type
+osd     - osd sub-system
+part    - disk partition related commands
+phyreg  - ethernet phy register read/write/dump
+ping    - send ICMP ECHO_REQUEST to network host
+powerset- power on/off a certain power domain
+powershow- show the power domain status , 0: on; 1: off
+printenv- print environment variables
+protect - enable or disable FLASH write protection
+pxe     - commands to get and boot from pxe files
+rarpboot- boot image via network using RARP/TFTP protocol
+rdext4pic- read logo bmp from ext4 part
+readMetadata- readMetadata
+read_temp- cpu temp-system
+reboot  - set reboot mode and reboot system
+reset   - Perform RESET of the CPU
+rpmb_init- RPMB sub-system
+rpmb_state- RPMB sub-system
+rsvmem  - reserve memory
+run     - run commands in an environment variable
+saradc  - saradc sub-system
+save    - save file to a filesystem
+saveenv - save environment variables to persistent storage
+sdc_burn- Burning with amlogic format package in sdmmc
+sdc_update- Burning a partition with image file in sdmmc card
+set_active_slot- set_active_slot
+set_roll_flag- set_roll_flag
+set_usb_boot- set usb boot mode
+setenv  - set environment variables
+sha2    - SHA2 command
+showvar - print local hushshell variables
+size    - determine a file's size
+source  - run script from memory
+store   - STORE sub-system:
+sysboot - command to get and boot from syslinux files
+systemoff- system off
+temp_triming- cpu temp-system
+test    - minimal test like /bin/sh
+tftpboot- boot image via network using TFTP protocol
+true    - do nothing, successfully
+unpackimg- un pack logo image into pictures
+unzip   - unzip a memory region
+update_tries- update_tries
+usb     - USB sub-system
+usb_burn- Burning with amlogic format package in usb
+usb_update- Burning a partition with image file in usb host
+usbboot - boot from USB device
+version - print monitor, compiler and linker version
+vout    - VOUT sub-system
+vout2   - VOUT2 sub-system
+vpp     - vpp sub-system
+vpu     - vpu sub-system
+watchdog- enable or disable watchdog
+watermark_init- initialize watermark
+
+s4_ap222_wudang# amlsecurecheck
+Start read misc partition datas!
+rebootmode is cold_boot
+forUpgrade_socType=37
+forUpgrade_secureBoot=false
+forUpgrade_robustOta=true
+forUpgrade_flashType=BOOT_EMMC
+forUpgrade_bootloaderCopies=3
+forUpgrade_bootloaderIndex=0
+forUpgrade_1stBootIndex=0
+Saving Environment to STORAGE... OK
+do_secureboot_check_capacity_boot: 400000
+GUID Partition Table Header signature is wrong: 0xED31668D204C4D40 != 0x5452415020494645
+GUID Partition Table Header signature is wrong: 0x8F78860BB7708E4 != 0x5452415020494645
+gpt is invalid
+wrn:--read bootloader ok, check valib gpt---
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+no gpt partition table
+rebootstatus is reboot_init, skip check
+amlsecurecheck - try bootloader/dtb/recovery secure check
+
+Usage:
+amlsecurecheck
+
+s4_ap222_wudang# amlmmc part 1
+
+Partition Map for MMC device 1  --   Partition Type: AML
+
+Part   Start     Sect x Size Type  name
+ 00 0 8192    512 U-Boot bootloader
+ 01 73728 131072    512 U-Boot reserved
+ 02 221184 0    512 U-Boot cache
+ 03 237568 16384    512 U-Boot env
+ 04 270336 4096    512 U-Boot frp
+ 05 290816 16384    512 U-Boot factory
+ 06 323584 49152    512 U-Boot vendor_boot_a
+ 07 389120 49152    512 U-Boot vendor_boot_b
+ 08 454656 65536    512 U-Boot tee
+ 09 536576 16384    512 U-Boot logo
+ 10 569344 4096    512 U-Boot misc
+ 11 589824 4096    512 U-Boot dtbo_a
+ 12 610304 4096    512 U-Boot dtbo_b
+ 13 630784 16384    512 U-Boot cri_data
+ 14 663552 32768    512 U-Boot param
+ 15 712704 32768    512 U-Boot odm_ext_a
+ 16 761856 32768    512 U-Boot odm_ext_b
+ 17 811008 65536    512 U-Boot oem_a
+ 18 892928 65536    512 U-Boot oem_b
+ 19 974848 131072    512 U-Boot boot_a
+ 20 1122304 131072    512 U-Boot boot_b
+ 21 1269760 32768    512 U-Boot rsv
+ 22 1318912 32768    512 U-Boot metadata
+ 23 1368064 4096    512 U-Boot vbmeta_a
+ 24 1388544 4096    512 U-Boot vbmeta_b
+ 25 1409024 4096    512 U-Boot vbmeta_system_a
+ 26 1429504 4096    512 U-Boot vbmeta_system_b
+ 27 1449984 3686400    512 U-Boot super
+ 28 5152768 10117120    512 U-Boot userdata
+** Partition 29 not found on device 1 **
